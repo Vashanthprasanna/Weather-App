@@ -1,0 +1,325 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: rgb(35, 35, 35);
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 500px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  padding-inline: 20px;
+  box-shadow: rgb(38, 36, 36) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 120px;
+  margin-block: 10px;
+  outline: 3px red solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+button svg path {
+  transition: 400ms;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+button:hover .text {
+  color: red;
+}
+
+button:hover svg path {
+  fill: red;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-block: 20px;
+}
+
+.inputField {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: 10px;
+}
+
+.forecastField {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 20px;
+}
+
+.currentWeatherDataField {
+  background: #00aeff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-block-end: 20px;
+  box-shadow: rgb(0, 0, 0, 0.7) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+  background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+  border-radius: 15px;
+}
+
+.forecastData {
+  text-align: center;
+  margin-inline: 10px;
+  margin-block: 10px;
+  min-width: 150px;
+  max-width: 220px;
+  flex: 1 1 200px;
+  box-shadow: rgb(0, 0, 0, 0.7) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+  background: #0276aa;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.weatherDataMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
+}
+
+.weatherDataMain>div {
+  text-align: center;
+  flex: 1 1 250px;
+}
+
+.temp,
+.humidity,
+.windSpeed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.currentWeatherField {
+  min-width: 70vw;
+  text-align: center;
+  margin-block: 25px;
+  margin-inline: 20px;
+}
+
+
+.mainBox {
+  display: flex;
+  justify-content: center;
+  width: 98vw;
+}
+
+.historyField {
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: rgb(0, 0, 0, 0.7) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+  background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.historyData {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: justify;
+}
+
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px;
+}
+
+.historyTable th,
+.historyTable td {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.historyTable th {
+  color: red;
+  font-size: 25px;
+}
+
+thead {
+  border-bottom: 1px solid grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1E2A47, #0C1B3A);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .cityField {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  
+  .searchField {
+    width: 100%;
+    padding: 12px;
+    background: #FFD700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .searchField:hover {
+    background: #FFC107;
+  }
+  
+  .currentWeatherField {
+    margin-top: 20px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .currentWeatherField img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .forecastField {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .forecastField img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .historyField {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    color: white;
+  }
+  
+  .deleteAllBtn {
+    width: 100%;
+    padding: 12px;
+    background: #FF4C4C;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .deleteAllBtn:hover {
+    background: #FF0000;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 500px;
+    }
+  
+    .cityField, .searchField, .deleteAllBtn {
+      font-size: 20px;
+    }
+  }
+   */
