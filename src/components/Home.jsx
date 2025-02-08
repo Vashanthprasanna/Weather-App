@@ -14,6 +14,10 @@ const Home = () => {
   const [msg, setMsg] = useState(false);
   const [show, setShow] = useState(false);
 
+  const [temp, setTemp] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [windSpeed, setWindSpeed] = useState("");
+  const [weather, setWeather] = useState("");
   const [list, setList] = useState([]);
 
   // Search section
@@ -36,14 +40,16 @@ const Home = () => {
           return respond.json();
         })
         .then((data) => {
-          console.log(data);
-
           if (data.err === true) {
             setMsg(true);
           } else {
+            setMsg(false);
             setName(data.city.name);
 
-            setMsg(false);
+            setTemp(data.list[0].main.temp);
+            setHumidity(data.list[0].main.humidity);
+            setWindSpeed(data.list[0].wind.speed);
+            setWeather(data.list[0].weather[0].description);
 
             const new_list = data.list.filter((item) =>
               item.dt_txt.includes("00:00:00")
@@ -69,8 +75,13 @@ const Home = () => {
 
         <div className="currentWeatherField">
           <h1>Weather</h1>
+
+          {/* Form Section */}
+
           <form onSubmit={search}>
             <div className="inputField">
+              {/* Input Field */}
+
               <input
                 type="text"
                 placeholder="Enter City"
@@ -80,6 +91,8 @@ const Home = () => {
                 className="cityField"
               />
             </div>
+
+            {/* Buttons */}
 
             <button type="submit" className="searchField">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -111,7 +124,7 @@ const Home = () => {
                         alt="weather"
                         width={120}
                       />
-                      <p style={{ fontSize: 25 }}>{list[0].weather[0].main}</p>
+                      <p style={{ fontSize: 25 }}>{weather}</p>
                     </div>
 
                     <div>
@@ -123,7 +136,7 @@ const Home = () => {
                           height={35}
                         />
                         <p style={{ fontSize: 25 }}>
-                          {list[0].main.temp}
+                          {temp}
                           <span style={{ color: "red" }}>{"\u00B0"}C</span>
                         </p>
                       </div>
@@ -135,9 +148,7 @@ const Home = () => {
                           width={30}
                           height={25}
                         />
-                        <p style={{ fontSize: 20 }}>
-                          Humidity = {list[0].main.humidity} %
-                        </p>
+                        <p style={{ fontSize: 20 }}>Humidity = {humidity} %</p>
                       </div>
 
                       <div className="windSpeed">
@@ -148,7 +159,7 @@ const Home = () => {
                           height={25}
                         />
                         <p style={{ fontSize: 20 }}>
-                          Windspeed = {list[0].wind.speed} m/s
+                          Windspeed = {windSpeed} m/s
                         </p>
                       </div>
                     </div>
